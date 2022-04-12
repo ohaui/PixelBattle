@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="ohaui.tk" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="ohaui.tk">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/../../../../Program Files/dotnet/sdk/6.0.201/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/../../../../Program Files/dotnet/sdk/6.0.201/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_6_default.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattle.sln" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Controllers/PixelBattleController.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Controllers/UserController.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Controllers/UsersController.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Data/PixelContext.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Enums/Privileges.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Model/Pixel.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Model/User.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/PixelBattleAPI.csproj" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Program.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Properties/launchSettings.json" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Records/RegisterRecord.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Records/UserRecord.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/Services/TokenService.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/appsettings.Development.json" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/appsettings.json" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/obj/Debug/net6.0/PixelBattleAPI.AssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/obj/Debug/net6.0/PixelBattleAPI.GeneratedMSBuildEditorConfig.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleAPI/obj/Debug/net6.0/PixelBattleAPI.GlobalUsings.g.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/App.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/App.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Extensions/ColorExtension.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Model/User.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Battle.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Battle.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Error.cshtml" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Error.cshtml" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Error.cshtml.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Login.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Login.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Register.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/Register.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/_Host.cshtml" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/_Host.cshtml" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/_Layout.cshtml" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Pages/_Layout.cshtml" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/PixelBattleFront.csproj" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Program.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Properties/launchSettings.json" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/MainLayout.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/MainLayout.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/MainLayout.razor.css" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/NavMenu.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/NavMenu.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/NavMenu.razor.css" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/SurveyPrompt.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/Shared/SurveyPrompt.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/_Imports.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/_Imports.razor" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/appsettings.Development.json" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/appsettings.json" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/obj/Debug/net6.0/PixelBattleFront.AssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/obj/Debug/net6.0/PixelBattleFront.GeneratedMSBuildEditorConfig.editorconfig" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/obj/Debug/net6.0/PixelBattleFront.GlobalUsings.g.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/obj/Debug/net6.0/PixelBattleFront.RazorAssemblyInfo.cs" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/bootstrap/bootstrap.min.css" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/bootstrap/bootstrap.min.css.map" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/FONT-LICENSE" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/ICON-LICENSE" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/README.md" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/css/site.css" web="/" />
+            <mapping local="$PROJECT_DIR$/PixelBattleFront/wwwroot/favicon.ico" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

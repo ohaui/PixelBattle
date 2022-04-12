@@ -4,6 +4,16 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PixelBattleAPI\PixelBattleAPI.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Data" />
+      <Folder Include="Services" />
+    </ItemGroup>
 
 </Project>

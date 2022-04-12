@@ -1,0 +1,120 @@
+@page "/Battle"
+@inject ProtectedLocalStorage ProtectedLocalStore
+@inject NavigationManager NavigationManager
+@inject ILogger<Battle> _logger
+@using PixelBattleAPI.Model
+@using System.Drawing
+@using System.Net.Http.Headers
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using PixelBattleFront.Extensions
+@using PixelBattleAPI.Model
+@using System.Diagnostics
+
+<PageTitle>Battle</PageTitle>
+
+User: @_username Latest Change: @_latestChangedPixel
+Chosen Pixel : @_chosenPixel Timer: 
+
+@{
+    pixels = GetPixels().Result;
+}
+
+<div style="display: grid; grid-template-columns: repeat(91, 0fr)">
+    @foreach (var pixel in pixels)
+    {
+        <button class="button-battle" style="background-color: @Color.FromArgb(pixel.Color).ToHex()" 
+                @onclick="() => {ChoosePixel(pixel.Position);}"/> 
+    }
+</div>
+
+@if (_chosenPixel != 0)
+    {
+        <footer class="footer mt-auto py-2 bg-light">
+            <div class="container" style="display: grid; grid-template-columns: repeat(@colors.Length, 1fr)">
+                @foreach (var color in colors)
+                {
+                    <button class="button-battle" style="border: 1px solid gray ;background-color: @color.ToHex()" @onclick=" async () => { chosenColor = color; await ChangePixelColor();}"></button>
+                }
+            </div>
+        </footer>
+    }
+
+@code {
+
+    private string? _username;
+    private string? _token;
+    private string? _error;
+    static private string _latestChangedPixel;
+    
+    Pixel[] pixels;
+    Color chosenColor;
+
+    Color[] colors = new[]
+    {
+        Color.Aqua,
+        Color.Red,
+        Color.DarkRed,
+        Color.Black,
+        Color.White,
+        Color.Green,
+        Color.Yellow,
+        Color.HotPink,
+        Color.Blue,
+        Color.Tomato,
+        Color.Gray,
+        Color.DarkGray,
+        Color.Purple,
+        Color.MediumPurple,
+        Color.SkyBlue,
+        Color.Moccasin,
+    };
+    
+    private int _chosenPixel = 0;
+
+    HttpClient _client = new() {};
+
+    private Task<Pixel[]> GetPixels()
+    {
+        var a =  _client.GetFromJsonAsync<Pixel[]>("https://localhost:7090/pixels");
+        return a!;
+    }
+
+    private void ChoosePixel(int position)
+    {
+        _chosenPixel = position;
+    }
+
+    private async Task ChangePixelColor()
+    {
+        var formContent = new FormUrlEncodedContent(new[]
+        {
+            new KeyValuePair<string, string>("position", _chosenPixel.ToString()),
+            new KeyValuePair<string, string>("color", chosenColor.Name)
+        });
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",_token);
+        
+        var request = await _client.PostAsync("https://localhost:7090/changepixelcolor", formContent).Result.Content.ReadAsStringAsync();
+        
+        _logger.LogInformation($@"pixel placed at {_chosenPixel} with color {chosenColor.Name} by {_username}");
+
+        _error = request;
+        pixels = GetPixels().Result;
+        _chosenPixel = default;
+        _latestChangedPixel = $"{_username} changed the pixel at {_chosenPixel} to {chosenColor.Name}";
+    }
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        { 
+            var u = await ProtectedLocalStore.GetAsync<string>("username");
+            var t = await ProtectedLocalStore.GetAsync<string>("jwt");
+            _username = u.Value;
+            _token = t.Value;
+            
+            StateHasChanged();
+        }
+    }
+    
+}

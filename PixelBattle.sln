@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelBattleAPI", "PixelBattleAPI\PixelBattleAPI.csproj", "{151BA184-9A23-4245-99AE-46D916905E90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelBattleFront", "PixelBattleFront\PixelBattleFront.csproj", "{24B0A972-1B65-4622-8BB7-619BC3C665B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{151BA184-9A23-4245-99AE-46D916905E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{151BA184-9A23-4245-99AE-46D916905E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{151BA184-9A23-4245-99AE-46D916905E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B0A972-1B65-4622-8BB7-619BC3C665B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B0A972-1B65-4622-8BB7-619BC3C665B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B0A972-1B65-4622-8BB7-619BC3C665B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B0A972-1B65-4622-8BB7-619BC3C665B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

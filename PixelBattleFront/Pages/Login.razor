@@ -1,6 +1,81 @@
-﻿@page "/Login"
+﻿@page "/login"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using Microsoft.AspNetCore.Mvc
+@using PixelBattleAPI.Records
+@using PixelBattleFront.Model
+@inject ProtectedLocalStorage _protectedLocalStore
+@inject NavigationManager _navigationManager
+@inject ILogger<Login> _logger
+
+
 <h3>Login</h3>
 
+@if (!string.IsNullOrWhiteSpace(_username))
+    {
+        _navigationManager.NavigateTo("/battle");
+    }
+
+<main class="form-signin text-center" style="margin: auto; width: 50%; margin-top: 10%;">
+    <div>
+        <h1 class="sh3 mb-3 fw-normal">Please log in</h1>
+
+        <div class="form-floating">
+            <input type="text" @bind="record.Username" class="form-control" id="floatingInput" placeholder="Username">
+            <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" @bind="record.Password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        @record.Password
+        @record.Username
+        <button @onclick=" async () =>  {await SendLogin();}" class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    </div>
+</main>
+
+
 @code {
+    private RegisterRecord record = new ();
+    private string? _username;
+    private string? _error;
+    private User? _user;
+
+    HttpClient _client = new HttpClient();
+
+    private async Task SendLogin()
+    {
+         var encodedContent = new FormUrlEncodedContent(new[]
+         {
+             new KeyValuePair<string, string>("username", record.Username),
+             new KeyValuePair<string, string>("password", record.Password)
+         });
+
+        var requestRaw = await _client.PostAsync("https://localhost:7090/login", encodedContent);
+        var request = await requestRaw.Content.ReadAsStringAsync();
+
+        if (!requestRaw.IsSuccessStatusCode)
+            return;
+
+        _user = JsonSerializer.Deserialize<User>(request);
+
+        await _protectedLocalStore.SetAsync("jwt", _user.token);
+        await _protectedLocalStore.SetAsync("username", _user.username);
+        
+        _logger.LogCritical($@"{_user.username} successfully logged!");
+        
+        _navigationManager.NavigateTo("/battle");
+    }
     
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var _usernameAwaited = await _protectedLocalStore.GetAsync<string>("username");
+            _username = _usernameAwaited.Value;
+        }
+        
+        StateHasChanged();
+    }
 }

@@ -25,7 +25,7 @@ public class UsersController : Controller
     {
         return await _context.Users.ToListAsync();
     }
-        
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUserById(int id)
     {
@@ -40,4 +40,5 @@ public class UsersController : Controller
         {
             return Unauthorized();
         }
+    }
 }

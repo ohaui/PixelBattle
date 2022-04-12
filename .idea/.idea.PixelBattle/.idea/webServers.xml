@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="57097a00-5cb9-4eb3-91ab-1c6bb8fe2186" name="ohaui.tk">
+        <fileTransfer rootFolder="/home/ohaui/PixelBattle/PixelBattleFront" accessType="SFTP" host="51.250.103.9" port="22" sshConfigId="530fd06c-b8cd-4810-95dc-421306d61b79" sshConfig="ohaui@51.250.103.9:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

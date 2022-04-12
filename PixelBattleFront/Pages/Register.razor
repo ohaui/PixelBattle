@@ -1,6 +1,70 @@
-﻿@page "/Register"
+﻿@page "/register"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage _protectedLocalStore
+@inject NavigationManager _navigationManager
+@inject ILogger<Register> _logger
+
 <h3>Register</h3>
 
+@if (!string.IsNullOrWhiteSpace(_username))
+    {
+        _navigationManager.NavigateTo("/battle");
+    }
+
+<main class="form-signin text-center" style="margin: auto; width: 50%; margin-top: 10%;">
+    <div>
+        <h1 class="sh3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input type="text" @bind-value="@_login" class="form-control" id="floatingInput" placeholder="Username">
+            <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" @bind-value="_password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        @_login
+        @_password
+        <button @onclick=" async () =>  {await SendRegister();}" class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    </div>
+</main>
+
+
 @code {
-    
+    private string? _login;
+    private string? _password;
+    private string? _username;
+    private string? _result;
+
+    HttpClient _client = new HttpClient();
+
+    private async Task SendRegister()
+    {
+        var encodedContent = new FormUrlEncodedContent(new[]
+        {
+            new KeyValuePair<string, string>("username", _login),
+            new KeyValuePair<string, string>("password", _password)
+        });
+
+        var response = await _client.PostAsync("https://localhost:7090/register", encodedContent);
+
+        _result = await response.Content.ReadAsStringAsync();
+        
+        _logger.LogCritical(_result);
+        
+        if (response.IsSuccessStatusCode)
+            _navigationManager.NavigateTo("/login", true);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var _usernameAwaited = await _protectedLocalStore.GetAsync<string>("username");
+            _username = _usernameAwaited.Value;
+        }
+        
+        StateHasChanged();
+    }
+
 }
